@@ -2,11 +2,11 @@ from keras.models import Sequential
 from keras.layers import Embedding, LSTM, Dense
 
 
-def create_model(self_vocab_size, self_embedding_weights):
+def create_model(embedding_input_dim, embedding_output_dim, embedding_weights):
     model = Sequential([
-        Embedding(input_dim=self_vocab_size,
-                  output_dim=300,
-                  weights=[self_embedding_weights],
+        Embedding(input_dim=embedding_input_dim,
+                  output_dim=embedding_output_dim,
+                  weights=[embedding_weights],
                   trainable=False,
                   mask_zero=True),
         LSTM(128),
