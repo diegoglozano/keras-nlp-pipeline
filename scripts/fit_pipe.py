@@ -6,7 +6,7 @@ from sklearn.pipeline import Pipeline
 from gensim.models import KeyedVectors
 from keras.wrappers.scikit_learn import KerasClassifier
 
-from library_pipeline_nlp.my_transformers import TokenizerTransformer, PadSequencesTransformer
+from library_pipeline_nlp.my_transformers import TokenizerTransformer, TokenizerTransformerInherit, PadSequencesTransformer
 from library_pipeline_nlp.my_model import create_model
 
 
@@ -35,7 +35,7 @@ embedding_weights = np.vstack([np.zeros(word_vectors.vectors.shape[1]), word_vec
 
 
 # DECLARE ESTIMATORS
-my_tokenizer = TokenizerTransformer()
+my_tokenizer = TokenizerTransformerInherit()
 my_padder = PadSequencesTransformer(maxlen=longest_text)
 my_model = KerasClassifier(build_fn=create_model,
                            epochs=2,
