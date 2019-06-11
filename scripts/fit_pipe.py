@@ -35,7 +35,7 @@ embedding_weights = np.vstack([np.zeros(word_vectors.vectors.shape[1]), word_vec
 
 
 # DECLARE ESTIMATORS
-my_tokenizer = TokenizerTransformerInherit()
+my_tokenizer = TokenizerTransformer()
 my_padder = PadSequencesTransformer(maxlen=longest_text)
 my_model = KerasClassifier(build_fn=create_model,
                            epochs=2,
