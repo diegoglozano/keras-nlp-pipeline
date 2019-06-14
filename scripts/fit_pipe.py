@@ -6,7 +6,7 @@ from sklearn.pipeline import Pipeline
 from gensim.models import KeyedVectors
 from keras.wrappers.scikit_learn import KerasClassifier
 
-from library_pipeline_nlp.my_transformers import TokenizerTransformer, TokenizerTransformerInherit, PadSequencesTransformer
+from library_pipeline_nlp.my_transformers import TokenizerTransformer, PadSequencesTransformer
 from library_pipeline_nlp.my_model import create_model
 
 
